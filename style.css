@@ -1,0 +1,284 @@
+*{margin: 0; padding: 0;}
+
+/* Classe d'animation */
+.start_disparition
+{
+    animation: start_disparition 1s ease none;
+}
+
+.decompte_apparition
+{
+    animation: decompte_apparition 0.2s ease-out none;
+}
+
+.pulse
+{
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.game_begin_animation
+{
+    animation: game_begin_animation 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.animation_question_apparition
+{
+    animation: animation_question_apparition 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.animation_question_disparition
+{
+    animation: animation_question_disparition 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.animation_reinitialisation
+{
+    animation: animation_reinitialisation 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.disparition_opacity
+{
+    animation: disparition_opacity 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.apparition_opacity
+{
+    animation: apparition_opacity 0.5s ease;
+    animation-fill-mode: forwards;
+}
+.changement_de_couleur
+{
+    animation: changement_de_couleur 1s ease;
+    animation-fill-mode: forwards;
+}
+
+/* Animation */
+@keyframes changement_de_couleur
+{
+    100%
+    {
+        background-color: pink;
+    }
+}
+@keyframes apparition_opacity
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes disparition_opacity
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+@keyframes animation_reinitialisation
+{
+    0%
+    {
+        height: 95%;
+        width: 95%;
+        border-radius: 0;
+    }
+    100%
+    {
+        height: 400px;
+        width: 400px;
+        border-radius: 100%;
+        background-color: pink;
+    }
+}
+@keyframes animation_question_disparition
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+@keyframes animation_question_apparition
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+@keyframes pulse
+{
+    50%
+    {
+        height: 410px;
+        width: 410px;
+    }
+}
+
+@keyframes start_disparition
+{
+    10%
+    {
+        font-size: 65px;
+    }
+    50%
+    {
+        font-size: 0px;
+    }
+    100%
+    {
+        font-size: 0px;
+    }
+}
+
+@keyframes decompte_apparition
+{
+    0%
+    {
+        font-size: 0px;
+    }
+
+    99%
+    {
+        font-size: 65px;
+    }
+}
+
+@keyframes game_begin_animation
+{
+    100%
+    {
+        height: 95%;
+        width: 95%;
+        border-radius: 0;
+    }
+}
+ 
+
+/* Hover */
+
+#box_animation:hover
+{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px black;
+}
+
+#high_score:hover
+{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px black;
+}
+
+#rejouer:hover
+{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px black;
+}
+/* Basic */
+body
+{
+    background-color: rgba(83, 195, 250, 0.658);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+#box_animation
+{   
+    outline: 0.4em solid black;
+    background-color: pink;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+#box_animation_text
+{
+    position: relative;
+    font-size: 55px;
+    font-weight: 600;
+}
+
+#question
+{
+    position: absolute;
+    display: flex;
+    top: 60%;
+    gap: 300px;
+
+    display: none;
+}
+
+#high_score
+{
+    outline: 4px solid black;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: rgba(83, 195, 250, 0.658);
+}
+
+#high_score_texte
+{
+    font-size: 25px;
+    border-bottom: 3px double black;
+    width: fit-content;
+}
+
+#high_score_value
+{
+    font-size: 30px;
+}
+
+#rejouer
+{
+    outline: 4px solid black;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+
+    background-color: rgba(83, 195, 250, 0.658);
+}
+
