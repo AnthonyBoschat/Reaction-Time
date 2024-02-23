@@ -18,6 +18,16 @@ game()
 // FONCTION ANIMATION AVANT JEU
 /////////////////////////////////////////////////////////////
 
+function getBestTime(){
+    const bestTime =  JSON.parse(localStorage.getItem('bestTime'))
+    if(bestTime){
+        return bestTime
+    }else{
+        return 9999999999999
+    }
+    
+}
+
 
 //////////////////////////////////////////// Programme principal
 function game()
@@ -278,8 +288,21 @@ function controle_meilleur_score(x)
     // On lui reaffecte la valeur la plus courte
     meilleur_score.push(plus_courte_reaction);
 
-    // On injecte la valeur du tableau dans la destination destination_best_score
-    high_score_value.innerHTML = meilleur_score[0];
+    
+
+    // On Récupère la valeur stocker dans le localStorage
+    const bestTimeInLocalStorage = getBestTime()
+
+    // Si cette valeur est plus grande que le nouveau score
+    if(bestTimeInLocalStorage > plus_courte_reaction){
+        // On sauvegarde le noueau score dans le cache
+        localStorage.setItem("bestTime", plus_courte_reaction)
+    }
+
+    // On affiche le score stocker dans le localStorage
+    high_score_value.innerHTML = getBestTime();
+
+    
 }
 
 ////////// Fonction pour tout réinitialiser
